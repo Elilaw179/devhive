@@ -38,7 +38,7 @@ export function HomeServices() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
-            <Card key={service.title} className="text-center transition-all hover:shadow-lg hover:scale-105">
+            <Card key={service.title} className="text-center transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-2">
               <CardHeader>
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground mb-4">
                   <service.icon className="h-8 w-8" />

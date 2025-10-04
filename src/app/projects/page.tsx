@@ -42,7 +42,7 @@ export default function ProjectsPage() {
           {projects.map((project) => {
             const projectImage = PlaceHolderImages.find(p => p.id === project.imageId);
             return (
-              <Card key={project.id} className="overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
+              <Card key={project.id} className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
                 {projectImage && (
                   <Image
                     src={projectImage.imageUrl}

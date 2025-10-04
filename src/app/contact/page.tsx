@@ -141,7 +141,7 @@ export default function ContactPage() {
              </p>
              <div className="space-y-4">
                 <Link href="mailto:contact@devhive.com" className="flex items-center gap-3 group">
-                    <Button variant="outline" size="icon">
+                    <Button variant="outline" size="icon" className="transition-transform duration-300 ease-in-out group-hover:scale-110">
                         <Mail className="h-5 w-5" />
                     </Button>
                     <div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                     </div>
                 </Link>
                 <Link href="https://www.facebook.com/profile.php?id=61581797937944" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
-                    <Button variant="outline" size="icon">
+                    <Button variant="outline" size="icon" className="transition-transform duration-300 ease-in-out group-hover:scale-110">
                         <Facebook className="h-5 w-5 text-blue-600" />
                     </Button>
                     <div>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                     </div>
                 </Link>
                 <Link href="https://www.linkedin.com/posts/devhive-tech_devhive-innovation-techsolutions-activity-7380290621997015040-4twI?utm_source=share&utm_medium=member_android&rcm=ACoAAFQsWUQB5r7Q1O-uhhJ6EsLWhELAYUncuJ0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
-                    <Button variant="outline" size="icon">
+                    <Button variant="outline" size="icon" className="transition-transform duration-300 ease-in-out group-hover:scale-110">
                         <Linkedin className="h-5 w-5 text-blue-700" />
                     </Button>
                     <div>

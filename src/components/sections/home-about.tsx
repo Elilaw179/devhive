@@ -27,7 +27,7 @@ export function HomeAbout() {
           </div>
           <div className="flex justify-center">
             {aboutImage && (
-              <Card className="overflow-hidden rounded-xl shadow-2xl transition-all hover:scale-105">
+              <Card className="overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105">
                 <Image
                   src={aboutImage.imageUrl}
                   alt={aboutImage.description}
