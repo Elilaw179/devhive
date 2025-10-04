@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="bg-card border-t">
       <div className="container mx-auto flex items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} DevHive Digital Solutions. All rights reserved.
+          &copy; {new Date().getFullYear()} DevHive. All rights reserved.
         </p>
         <div className="flex items-center space-x-2">
           <Button variant="ghost" size="icon" asChild>

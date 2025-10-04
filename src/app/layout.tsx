@@ -5,8 +5,8 @@ import { Footer } from '@/components/layout/footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'DevHive Digital Solutions',
-  description: 'Crafting digital excellence, one line of code at a time.',
+  title: 'DevHive',
+  description: 'Building ideas into reality.',
 };
 
 export default function RootLayout({

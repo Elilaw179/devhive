@@ -11,7 +11,7 @@ export function About() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="space-y-6">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-              About DevHive Digital Solutions
+              About DevHive
             </h2>
             <p className="text-lg text-muted-foreground">
               At DevHive, we are more than just developers; we are architects of the digital future. Our mission is to empower businesses with robust, scalable, and elegant software solutions that drive growth and innovation.

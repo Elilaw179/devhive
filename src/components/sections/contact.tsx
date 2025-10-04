@@ -130,7 +130,7 @@ export function Contact() {
                     </Button>
                     <div>
                         <p className="font-semibold group-hover:text-primary transition-colors">Follow on Twitter</p>
-                        <p className="text-sm text-muted-foreground">@DevHiveDigital</p>
+                        <p className="text-sm text-muted-foreground">@DevHive</p>
                     </div>
                 </Link>
                 <Link href="#" className="flex items-center gap-3 group">
@@ -139,7 +139,7 @@ export function Contact() {
                     </Button>
                     <div>
                         <p className="font-semibold group-hover:text-primary transition-colors">Connect on LinkedIn</p>
-                        <p className="text-sm text-muted-foreground">DevHive Digital Solutions</p>
+                        <p className="text-sm text-muted-foreground">DevHive</p>
                     </div>
                 </Link>
              </div>
