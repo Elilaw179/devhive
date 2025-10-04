@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Zap } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "About", href: "/about" },
@@ -15,6 +17,21 @@ const navLinks = [
 
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const pathname = usePathname();
+
+  const getLinkClass = (href: string) => {
+    return cn(
+      "text-sm font-medium transition-colors hover:text-primary",
+      pathname === href ? "text-primary" : "text-muted-foreground"
+    );
+  };
+  
+  const getMobileLinkClass = (href: string) => {
+    return cn(
+        "text-lg font-medium transition-colors hover:text-primary",
+        pathname === href ? "text-primary" : "text-foreground"
+    );
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -30,14 +47,14 @@ export function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={getLinkClass(link.href)}
             >
               {link.name}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-4">
-           <Button asChild className="hidden md:flex" variant="outline">
+           <Button asChild className="hidden md:flex" variant={pathname === "/contact" ? "default" : "outline"}>
             <Link href="/contact">Get a Quote</Link>
           </Button>
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -60,7 +77,7 @@ export function Header() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsSheetOpen(false)}
-                    className="text-lg font-medium text-foreground transition-colors hover:text-primary"
+                    className={getMobileLinkClass(link.href)}
                   >
                     {link.name}
                   </Link>
