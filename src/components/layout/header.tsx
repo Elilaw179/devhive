@@ -7,6 +7,7 @@ import { Menu, Zap } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "../theme-toggle";
 
 const navLinks = [
   { name: "About", href: "/about" },
@@ -57,6 +58,9 @@ export function Header() {
            <Button asChild className="hidden md:flex" variant={pathname === "/contact" ? "default" : "outline"}>
             <Link href="/contact">Get a Quote</Link>
           </Button>
+
+          <ThemeToggle />
+
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
