@@ -14,19 +14,21 @@ export async function POST(req: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'DevHive Contact Form <onboarding@resend.dev>',
-      to: ['sirlaw179@gmail.com'], // CHANGE THIS TO YOUR RECEIVING EMAIL
+      from: 'DevHive Contact Form <noreply@yourdomain.com>', // REPLACE with your verified domain
+      to: ['your-email@example.com'], // CHANGE THIS TO YOUR RECEIVING EMAIL
       subject: `New message from ${name}`,
       reply_to: email,
       react: ContactFormEmail({ name, email, message }),
     });
 
     if (error) {
+      console.error('Resend error:', error);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
     return NextResponse.json(data);
   } catch (error) {
+    console.error('API route error:', error);
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
