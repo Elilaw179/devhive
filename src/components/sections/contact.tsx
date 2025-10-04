@@ -1,0 +1,151 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
+import { Linkedin, Mail, Send, Twitter } from 'lucide-react';
+import Link from 'next/link';
+
+const formSchema = z.object({
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Please enter a valid email address.' }),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
+});
+
+export function Contact() {
+  const { toast } = useToast();
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+    toast({
+      title: 'Message Sent!',
+      description: "Thanks for reaching out. We'll get back to you soon.",
+    });
+    form.reset();
+  }
+
+  return (
+    <section id="contact" className="py-16 sm:py-24">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+            Let's Build Something Great
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Have a project in mind? We'd love to hear about it.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <Card className="shadow-xl">
+              <CardHeader>
+                <CardTitle>Send us a Message</CardTitle>
+                <CardDescription>Fill out the form below and we'll be in touch.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Your Name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input placeholder="your@email.com" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Message</FormLabel>
+                          <FormControl>
+                            <Textarea placeholder="Tell us about your project..." className="min-h-[120px]" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </Button>
+                  </form>
+                </Form>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="space-y-6">
+             <h3 className="font-headline text-xl font-semibold">Other Ways to Connect</h3>
+             <p className="text-muted-foreground">
+                Prefer to reach out directly? Find us here:
+             </p>
+             <div className="space-y-4">
+                <Link href="mailto:contact@devhive.com" className="flex items-center gap-3 group">
+                    <Button variant="outline" size="icon">
+                        <Mail className="h-5 w-5" />
+                    </Button>
+                    <div>
+                        <p className="font-semibold group-hover:text-primary transition-colors">Email Us</p>
+                        <p className="text-sm text-muted-foreground">contact@devhive.com</p>
+                    </div>
+                </Link>
+                <Link href="#" className="flex items-center gap-3 group">
+                    <Button variant="outline" size="icon">
+                        <Twitter className="h-5 w-5" />
+                    </Button>
+                    <div>
+                        <p className="font-semibold group-hover:text-primary transition-colors">Follow on Twitter</p>
+                        <p className="text-sm text-muted-foreground">@DevHiveDigital</p>
+                    </div>
+                </Link>
+                <Link href="#" className="flex items-center gap-3 group">
+                    <Button variant="outline" size="icon">
+                        <Linkedin className="h-5 w-5" />
+                    </Button>
+                    <div>
+                        <p className="font-semibold group-hover:text-primary transition-colors">Connect on LinkedIn</p>
+                        <p className="text-sm text-muted-foreground">DevHive Digital Solutions</p>
+                    </div>
+                </Link>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
