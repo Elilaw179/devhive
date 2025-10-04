@@ -15,11 +15,16 @@ export async function POST(req: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       // IMPORTANT: You must use a verified domain with Resend.
-      // Free domains like '.vercel.app' cannot be verified.
-      // Replace 'yourdomain.com' with your actual, verified domain.
+      // Free domains like '.vercel.app' cannot be verified and will not work.
+      // 1. Purchase a custom domain (e.g., from GoDaddy, Namecheap).
+      // 2. Add and verify it in your Resend account.
+      // 3. Replace 'yourdomain.com' below with your actual, verified domain.
       from: 'DevHive Contact Form <noreply@yourdomain.com>',
-      // CHANGE THIS to the email address where you want to receive messages.
+      
+      // This is the email address that will receive the form submissions.
+      // You can change this to any email address you want.
       to: ['sirlaw179@gmail.com'], 
+
       subject: `New message from ${name}`,
       reply_to: email,
       react: ContactFormEmail({ name, email, message }),
