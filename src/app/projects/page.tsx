@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { AiPreviewGenerator } from "./ai-preview-generator";
+import { AiPreviewGenerator } from "@/components/sections/ai-preview-generator";
 
 const projects = [
   {
@@ -28,7 +28,7 @@ const projects = [
   },
 ];
 
-export function Projects() {
+export default function ProjectsPage() {
   return (
     <section id="projects" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

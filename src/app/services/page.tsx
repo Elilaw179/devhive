@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Smartphone, Monitor, Server, Palette, Icon } from "lucide-react";
+import { Smartphone, Monitor, Server, Palette } from "lucide-react";
 
 const services = [
   {
@@ -24,7 +24,7 @@ const services = [
   },
 ];
 
-export function Services() {
+export default function ServicesPage() {
   return (
     <section id="services" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

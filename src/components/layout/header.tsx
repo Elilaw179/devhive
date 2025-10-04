@@ -7,10 +7,10 @@ import { Menu, Zap } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -38,7 +38,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-4">
            <Button asChild className="hidden md:flex" variant="outline">
-            <Link href="#contact">Get a Quote</Link>
+            <Link href="/contact">Get a Quote</Link>
           </Button>
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
