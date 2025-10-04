@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: 'DevHive Contact Form <onboarding@resend.dev>',
-      to: ['delivered@resend.dev'], // CHANGE THIS TO YOUR RECEIVING EMAIL
+      to: ['sirlaw179@gmail.com'], // CHANGE THIS TO YOUR RECEIVING EMAIL
       subject: `New message from ${name}`,
       reply_to: email,
       react: ContactFormEmail({ name, email, message }),
