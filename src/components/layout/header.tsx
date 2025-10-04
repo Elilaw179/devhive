@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Zap } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -65,12 +65,19 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
-              <Link href="/" className="mr-6 flex items-center space-x-2">
-                <div className="bg-primary rounded-md p-1.5">
-                    <Zap className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <span className="font-bold font-headline">DevHive</span>
-              </Link>
+                <SheetHeader className="border-b pb-4">
+                    <SheetTitle asChild>
+                        <Link href="/" className="flex items-center space-x-2">
+                            <div className="bg-primary rounded-md p-1.5">
+                                <Zap className="h-5 w-5 text-primary-foreground" />
+                            </div>
+                            <span className="font-bold font-headline">DevHive</span>
+                        </Link>
+                    </SheetTitle>
+                    <SheetDescription className="sr-only">
+                        Mobile navigation menu for DevHive.
+                    </SheetDescription>
+                </SheetHeader>
               <nav className="mt-8 flex flex-col space-y-4">
                 {navLinks.map((link) => (
                   <Link
