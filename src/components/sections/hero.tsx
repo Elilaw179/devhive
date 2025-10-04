@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section className="relative py-24 sm:py-32 md:py-40">
       <div className="absolute inset-0 bg-background">
-        <div className="absolute inset-0 bg-grid-yellow-500/[0.2] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-grid-yellow-400/[0.2]"></div>
+        <div className="absolute inset-0 bg-grid-primary/[0.2] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-grid-primary/[0.2]"></div>
       </div>
       <div className="container relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <h1 className="font-headline text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
