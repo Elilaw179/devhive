@@ -151,7 +151,7 @@ export default function ContactPage() {
                 </Link>
                 <Link href="https://www.facebook.com/profile.php?id=61581797937944" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                     <Button variant="outline" size="icon">
-                        <Facebook className="h-5 w-5" />
+                        <Facebook className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     </Button>
                     <div>
                         <p className="font-semibold group-hover:text-primary transition-colors">Follow on Facebook</p>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                 </Link>
                 <Link href="https://www.linkedin.com/posts/devhive-tech_devhive-innovation-techsolutions-activity-7380290621997015040-4twI?utm_source=share&utm_medium=member_android&rcm=ACoAAFQsWUQB5r7Q1O-uhhJ6EsLWhELAYUncuJ0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                     <Button variant="outline" size="icon">
-                        <Linkedin className="h-5 w-5" />
+                        <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     </Button>
                     <div>
                         <p className="font-semibold group-hover:text-primary transition-colors">Connect on LinkedIn</p>
