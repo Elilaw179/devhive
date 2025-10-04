@@ -9,7 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Linkedin, Mail, Send, Twitter } from 'lucide-react';
+import { Linkedin, Mail, Send, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -49,13 +49,14 @@ export default function ContactPage() {
         });
         form.reset();
       } else {
-        throw new Error('Something went wrong. Please try again.');
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Something went wrong. Please try again.');
       }
-    } catch (error) {
+    } catch (error: any) {
       toast({
         variant: 'destructive',
         title: 'Uh oh! Something went wrong.',
-        description: 'There was a problem with your request. Please try again.',
+        description: error.message || 'There was a problem with your request. Please try again.',
       });
     } finally {
       setIsSubmitting(false);
@@ -148,16 +149,16 @@ export default function ContactPage() {
                         <p className="text-sm text-muted-foreground">contact@devhive.com</p>
                     </div>
                 </Link>
-                <Link href="#" className="flex items-center gap-3 group">
+                <Link href="https://www.facebook.com/profile.php?id=61581797937944" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                     <Button variant="outline" size="icon">
-                        <Twitter className="h-5 w-5" />
+                        <Facebook className="h-5 w-5" />
                     </Button>
                     <div>
-                        <p className="font-semibold group-hover:text-primary transition-colors">Follow on Twitter</p>
-                        <p className="text-sm text-muted-foreground">@DevHive</p>
+                        <p className="font-semibold group-hover:text-primary transition-colors">Follow on Facebook</p>
+                        <p className="text-sm text-muted-foreground">DevHive</p>
                     </div>
                 </Link>
-                <Link href="#" className="flex items-center gap-3 group">
+                <Link href="https://www.linkedin.com/posts/devhive-tech_devhive-innovation-techsolutions-activity-7380290621997015040-4twI?utm_source=share&utm_medium=member_android&rcm=ACoAAFQsWUQB5r7Q1O-uhhJ6EsLWhELAYUncuJ0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                     <Button variant="outline" size="icon">
                         <Linkedin className="h-5 w-5" />
                     </Button>
