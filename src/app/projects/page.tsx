@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { AiPreviewGenerator } from "@/components/sections/ai-preview-generator";
 
 const projects = [
   {
@@ -70,7 +69,6 @@ export default function ProjectsPage() {
           })}
         </div>
         
-        <AiPreviewGenerator />
       </div>
     </section>
   );
