@@ -66,7 +66,7 @@ export default function ContactPage() {
   return (
     <section id="contact" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <div className="text-center animate-in fade-in slide-in-from-top-8 duration-1000 ease-in-out">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
             Let's Build Something Great
           </h2>
@@ -76,7 +76,7 @@ export default function ContactPage() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 animate-in fade-in slide-in-from-left-8 duration-1000 ease-in-out">
             <Card className="shadow-xl">
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
@@ -134,7 +134,7 @@ export default function ContactPage() {
             </Card>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 animate-in fade-in slide-in-from-right-8 duration-1000 ease-in-out">
              <h3 className="font-headline text-xl font-semibold">Other Ways to Connect</h3>
              <p className="text-muted-foreground">
                 Prefer to reach out directly? Find us here:

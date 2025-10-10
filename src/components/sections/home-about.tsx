@@ -12,7 +12,7 @@ export function HomeAbout() {
     <section id="about-home" className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div className="space-y-6">
+          <div className="space-y-6 animate-in fade-in slide-in-from-left-8 duration-1000 ease-in-out">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
               Who We Are
             </h2>
@@ -25,7 +25,7 @@ export function HomeAbout() {
               </Link>
             </Button>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-in fade-in slide-in-from-right-8 duration-1000 ease-in-out">
             {aboutImage && (
               <Card className="overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105">
                 <Image
