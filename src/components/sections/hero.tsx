@@ -63,7 +63,7 @@ export function Hero() {
   const showLine2Cursor = isLine1Done && !isLine2Done;
 
   return (
-    <section className="relative py-24 sm:py-32 md:py-40">
+    <section className="relative py-20 md:py-28">
       <div className="absolute inset-0 bg-background">
         <div className="absolute inset-0 bg-grid-yellow-500/[0.2] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-grid-yellow-400/[0.2]"></div>
       </div>

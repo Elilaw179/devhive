@@ -28,7 +28,7 @@ const services = [
 
 export function HomeServices() {
   return (
-    <section id="services-home" className="py-16 sm:py-24 bg-secondary">
+    <section id="services-home" className="py-12 md:py-16 bg-secondary">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center animate-in fade-in slide-in-from-top-8 duration-1000 ease-in-out">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Expertise</h2>

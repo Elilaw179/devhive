@@ -6,7 +6,7 @@ export default function AboutPage() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-image');
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-secondary">
+    <section id="about" className="py-12 md:py-16 bg-secondary">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="space-y-6 animate-in fade-in slide-in-from-left-8 duration-1000 ease-in-out">
