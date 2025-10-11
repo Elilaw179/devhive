@@ -58,9 +58,8 @@ export function Hero() {
   }, []);
 
   const isLine1Done = displayText.line1.length === textLines[0].length;
-  const isLine2Done = displayText.line2.length === textLines[1].length;
   const showLine1Cursor = !isLine1Done;
-  const showLine2Cursor = isLine1Done && !isLine2Done;
+  const showLine2Cursor = isLine1Done;
 
   return (
     <section className="relative py-20 md:py-28">
@@ -69,7 +68,7 @@ export function Hero() {
       </div>
       <div className="container relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <div className="animate-in fade-in slide-in-from-top-8 duration-1000 ease-in-out">
-          <h1 className="font-headline text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl min-h-[150px] sm:min-h-[190px] md:min-h-[240px] lg:min-h-[280px]">
+        <h1 className="font-headline text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl min-h-[150px] sm:min-h-[190px] md:min-h-[240px] lg:min-h-[280px] bg-clip-text text-transparent bg-gradient-to-r from-foreground/80 to-foreground animate-shine">
             <span>
               {displayText.line1}
               {showLine1Cursor && showCursor && <span className="text-primary">|</span>}
