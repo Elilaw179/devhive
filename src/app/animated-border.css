@@ -1,0 +1,77 @@
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.animated-border-container {
+  position: relative;
+  border-radius: inherit;
+  isolation: isolate;
+  transition: all 300ms ease-in-out;
+}
+
+.animated-border-container::before {
+  content: '';
+  position: absolute;
+  inset: -2px; /* Border thickness */
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    hsl(var(--muted)),
+    hsl(var(--primary)),
+    hsl(var(--accent)),
+    hsl(var(--primary)),
+    hsl(var(--muted))
+  );
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  animation: spin 3s linear infinite paused;
+}
+
+.animated-border-container:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.animated-border-container-icon {
+  position: relative;
+  border-radius: 9999px; /* Fully rounded for icons */
+  isolation: isolate;
+  transition: all 300ms ease-in-out;
+  padding: 1px; /* To prevent content from overlapping the border */
+}
+
+.animated-border-container-icon::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    hsl(var(--muted)),
+    hsl(var(--primary)),
+    hsl(var(--accent)),
+    hsl(var(--primary)),
+    hsl(var(--muted))
+  );
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  animation: spin 3s linear infinite paused;
+}
+
+.animated-border-container-icon:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
