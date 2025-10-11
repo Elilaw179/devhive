@@ -9,7 +9,7 @@ export default function AboutPage() {
     <section id="about" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div className="space-y-6">
+          <div className="space-y-6 animate-in fade-in slide-in-from-left-8 duration-1000 ease-in-out">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
               About DevHive
             </h2>
@@ -20,9 +20,9 @@ export default function AboutPage() {
               Our team consists of passionate experts in mobile and web development, backend systems, and user-centric UI/UX design. We thrive on transforming complex challenges into seamless digital experiences, ensuring every project we undertake not only meets but exceeds client expectations.
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-in fade-in slide-in-from-right-8 duration-1000 ease-in-out">
             {aboutImage && (
-              <Card className="overflow-hidden rounded-xl shadow-2xl transition-all hover:scale-105">
+              <Card className="overflow-hidden rounded-xl shadow-2xl transition-transform duration-300 ease-in-out hover:scale-105">
                 <Image
                   src={aboutImage.imageUrl}
                   alt={aboutImage.description}
