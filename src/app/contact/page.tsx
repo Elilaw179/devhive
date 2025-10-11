@@ -158,7 +158,7 @@ export default function ContactPage() {
                         <p className="text-sm text-muted-foreground">DevHive</p>
                     </div>
                 </Link>
-                <Link href="https://www.linkedin.com/posts/devhive-tech_devhive-innovation-techsolutions-activity-7380290621997015040-4twI?utm_source=share&utm_medium=member_android&rcm=ACoAAFQsWUQB5r7Q1O-uhhJ6EsLWhELAYUncuJ0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                <Link href="https://www.linkedin.com/posts/devhive-tech_devhive-innovation-techsolutions-activity-7380290621997015040-4twI?utm_source=share&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
                     <Button variant="outline" size="icon" className="transition-transform duration-300 ease-in-out group-hover:scale-110">
                         <Linkedin className="h-5 w-5 text-blue-700" />
                     </Button>
