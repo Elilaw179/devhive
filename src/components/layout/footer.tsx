@@ -10,23 +10,19 @@ export function Footer() {
           &copy; {new Date().getFullYear()} DevHive. All rights reserved.
         </p>
         <div className="flex items-center space-x-2">
-          <div className="animated-border-container-icon">
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="https://www.facebook.com/profile.php?id=61581797937944" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <Facebook className="h-5 w-5 text-blue-600 transition-transform duration-300 ease-in-out hover:scale-125" />
-              </Link>
-            </Button>
-          </div>
-          <div className="animated-border-container-icon">
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="https://www.linkedin.com/posts/devhive-tech_devhive-innovation-techsolutions-activity-7380290621997015040-4twI?utm_source=share&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5 text-blue-700 transition-transform duration-300 ease-in-out hover:scale-125" />
-              </Link>
-            </Button>
-          </div>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="https://www.facebook.com/profile.php?id=61581797937944" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <Facebook className="h-5 w-5 text-blue-600 transition-transform duration-300 ease-in-out hover:scale-125" />
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" asChild>
+            <Link href="https://www.linkedin.com/posts/devhive-tech_devhive-innovation-techsolutions-activity-7380290621997015040-4twI?utm_source=share&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Linkedin className="h-5 w-5 text-blue-700 transition-transform duration-300 ease-in-out hover:scale-125" />
+            </Link>
+          </Button>
         </div>
       </div>
     </footer>
   );
 }
-//noted
+//take note

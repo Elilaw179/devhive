@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "./animated-border.css";
 
 body {
   font-family: Arial, Helvetica, sans-serif;

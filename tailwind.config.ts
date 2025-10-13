@@ -1,18 +1,4 @@
 import type {Config} from 'tailwindcss';
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
-
-function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
- 
-  addBase({
-    ":root": newVars,
-  });
-}
 
 export default {
   darkMode: ['class'],
@@ -102,36 +88,24 @@ export default {
             height: '0',
           },
         },
-        'shine': {
-          'from': { backgroundPosition: '200% 0' },
-          'to': { backgroundPosition: '-200% 0' },
+        shine: {
+          '0%': {
+            'background-position': '-100% 0',
+          },
+          '50%': {
+            'background-position': '100% 0',
+          },
+          '100%': {
+            'background-position': '100% 0',
+          }
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'shine': 'shine 8s linear infinite',
+        'shine': 'shine 5s linear infinite',
       },
     },
   },
-  plugins: [
-    require('tailwindcss-animate'),
-    function ({ matchUtilities, theme }: any) {
-      matchUtilities(
-        {
-          "bg-grid": (value: any) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-            )}")`,
-          }),
-        },
-        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
-      );
-    },
-    addVariablesForColors,
-  ],
+  plugins: [require('tailwindcss-animate')],
 } satisfies Config;
-
-function svgToDataUri(svg: string) {
-  return `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
-}
