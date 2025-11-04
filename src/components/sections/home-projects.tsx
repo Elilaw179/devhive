@@ -21,7 +21,7 @@ const projects = [
   },
   {
     id: "project-3",
-    title: "ConnectSphere",
+    title: "B2TRENDZ-Latest Music&Movies",
     tags: ["Web", "UI/UX"],
     imageId: "project-3-image"
   },

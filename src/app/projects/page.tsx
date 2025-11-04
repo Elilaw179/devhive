@@ -9,21 +9,25 @@ const projects = [
     title: "Project Innovate",
     description: "A mobile-first platform for collaborative project management, designed for agile teams.",
     tags: ["Mobile", "UI/UX"],
-    imageId: "project-1-image"
+    imageId: "project-1-image",
+    link: "#"
+    
   },
   {
     id: "project-2",
     title: "DataStream API",
     description: "A high-performance REST API for real-time data analytics and business intelligence.",
     tags: ["Backend", "API"],
-    imageId: "project-2-image"
+    imageId: "project-2-image",
+    link: "#"
   },
   {
     id: "project-3",
-    title: "ConnectSphere",
-    description: "A responsive social networking web app with a focus on community building and engagement.",
+    title: "B2TRENDZ",
+    description: "Discover the latest trends in music, movies, videos and entertainment.",
     tags: ["Web", "UI/UX"],
-    imageId: "project-3-image"
+    imageId: "project-3-image",
+    link: "https://www.b2trendz.com/"
   },
 ];
 
@@ -47,16 +51,25 @@ export default function ProjectsPage() {
                 className="animate-in fade-in slide-in-from-top-12 duration-1000 ease-in-out"
                 style={{ animationDelay: `${i * 150}ms`, animationFillMode: 'backwards' }}
               >
+               
                 <Card className="overflow-hidden h-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
                   {projectImage && (
-                    <Image
+
+                    <a href={project.link}
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                      <Image
                       src={projectImage.imageUrl}
                       alt={project.title}
                       width={600}
                       height={400}
                       className="aspect-video w-full object-cover"
                       data-ai-hint={projectImage.imageHint}
+                    
                     />
+
+                    </a>
+         
                   )}
                   <CardHeader>
                     <CardTitle>{project.title}</CardTitle>
