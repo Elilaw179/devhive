@@ -11,19 +11,22 @@ const projects = [
     id: "project-1",
     title: "Project Innovate",
     tags: ["Mobile", "UI/UX"],
-    imageId: "project-1-image"
+    imageId: "project-1-image",
+     link:"#"
   },
   {
     id: "project-2",
     title: "DataStream API",
     tags: ["Backend", "API"],
-    imageId: "project-2-image"
+    imageId: "project-2-image",
+     link:"#"
   },
   {
     id: "project-3",
     title: "B2TRENDZ-Latest Music&Movies",
     tags: ["Web", "UI/UX"],
-    imageId: "project-3-image"
+    imageId: "project-3-image",
+    link:"https://www.b2trendz.com/"
   },
 ];
 
@@ -49,7 +52,11 @@ export function HomeProjects() {
               >
                 <Card className="overflow-hidden h-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1">
                   {projectImage && (
-                    <Image
+                   <a href={project.link} 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+
+                     <Image
                       src={projectImage.imageUrl}
                       alt={project.title}
                       width={600}
@@ -57,6 +64,7 @@ export function HomeProjects() {
                       className="aspect-video w-full object-cover"
                       data-ai-hint={projectImage.imageHint}
                     />
+                   </a>
                   )}
                   <CardHeader>
                     <CardTitle>{project.title}</CardTitle>
